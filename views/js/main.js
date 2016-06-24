@@ -490,7 +490,7 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
-  var topPos = document.body.scrollTop;
+  var topPos = document.body.scrollTop; // store top pos in var outside of loop to prevent FSL
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((topPos / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
